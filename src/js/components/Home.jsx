@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SecondsCounter from "./SecondsCounter.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+  const [seconds, setSeconds] = useState(0);
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prev) => (prev < 10 ? prev + 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center", // Cambiado a center para centrar verticalmente
+        minHeight: "100vh",   // Asegura ocupar toda la pantalla
+        backgroundColor: "#000",
+        padding: "20px",
+      }}
+    >
+      <SecondsCounter seconds={seconds} />
+    </div>
+  );
 };
 
 export default Home;
