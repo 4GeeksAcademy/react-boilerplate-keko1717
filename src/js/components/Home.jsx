@@ -17,7 +17,7 @@ const Home = () => {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center", /
+        alignItems: "center", 
         minHeight: "100vh",   
         backgroundColor: "#000",
         padding: "20px",
