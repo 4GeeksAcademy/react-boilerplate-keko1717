@@ -17,8 +17,8 @@ const Home = () => {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center", // Cambiado a center para centrar verticalmente
-        minHeight: "100vh",   // Asegura ocupar toda la pantalla
+        alignItems: "center", /
+        minHeight: "100vh",   
         backgroundColor: "#000",
         padding: "20px",
       }}
